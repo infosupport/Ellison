@@ -1,0 +1,49 @@
+/*
+ * Ellison: EL checker
+ * Copyright (C) 2013 Info Support
+ * dev@sonar.codehaus.org
+ * 
+ * Sonar is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3 of the License, or (at your option) any later version.
+ * 
+ * Sonar is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with Sonar; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02
+ */
+package com.infosupport.ellison.testutil;
+
+import java.util.Enumeration;
+
+/**
+ * Utility functions for {@link Enumeration}s.
+ *
+ * @author StefanZ
+ */
+public class Enumerations {
+
+    /**
+     * Returns the size of an enumeration, or, in other words, how many elements it contains.
+     *
+     * @param enumeration
+     *     the enumeration to get the size of. May not be {@code null}
+     *
+     * @return the length of the enumeration
+     */
+    public static int enumerationSize(Enumeration<?> enumeration) {
+        int size = 0;
+
+        while (enumeration.hasMoreElements()) {
+            size++;
+            enumeration.nextElement();
+        }
+
+        return size;
+    }
+}
